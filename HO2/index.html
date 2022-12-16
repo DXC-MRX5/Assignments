@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FORMS</h1>
+    <form action="./index2.html">
+        <label for="name">Name</label>
+        <input type="text" name="Name" placeholder="Your name" required>
+        <br>
+        <br>
+        <label for="email">Email Address</label>
+        <input type="email" name="Email" placeholder="Your email" required>
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="Password" placeholder="Create your password" required>
+        <br>
+        <br>
+        <label for="language">Language</label>
+        <br>
+        <br>
+        <input type="radio" name="Language" value="React" id="React">
+        <label for="React">React</label><br>
+        <input type="radio" name="Language" value="Angular" id="Angular">
+        <label for="Angular">Angular</label><br>
+        <input type="radio" name="Language" value="Vue" id="Vue">
+        <label for="Vue">Vue</label>
+        <br>
+        <br>
+        <label for="course">Select your Course</label>
+        <br>
+        <br>
+        <input type="checkbox" name="Course1" value="MERN" id="mern" required>
+        <label for="mern">MERN</label><br>
+        <input type="checkbox" name="Course2" value="MEAN" id="mean">
+        <label for="mean">MEAN</label><br>
+        <input type="checkbox" name="Course3" value="MEVN" id="mevn">
+        <label for="mevn">MEVN</label>
+        <br>
+        <br>
+        <label for="field">Field:</label><br>
+        <!--<input type="text" list="field" name="Field" placeholder="Select field" required><br>-->
+        <select name="field" id="field">
+            <option value="Front end">Front end</option>
+            <option value="Back end">Back end</option>
+            <option value="Full stack">Full stack</option>
+            </select>
+        <br>
+        <br>
+        <textarea name="feedback" placeholder="Your Feedback" id="feedback" style="background-color:darkgray;"></textarea>
+        <br>
+        <label for="number">Phone number</label>
+        <input type="tel" name="Phone number" id="number" maxlength="10">
+        <input type="submit" style="background-color:chartreuse; padding:2px;">
+    </form>
+    <br>
+    <br>
+    <h1>TABLES</h1>
+    <a href="./table.html">Click here</a>
+
+</body>
+</html>
