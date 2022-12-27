@@ -1,0 +1,9 @@
+h1 {color: red;}
+h2 {font-style: italic; color: red;}
+ol {line-height: 45px; color: maroon;}
+#lnth {text-decoration: line-through; font-weight: bold;}
+.bgcl {font-weight: bold; background-color: yellow;}
+#lnun {font-style: italic; text-decoration: underline;}
+ul {letter-spacing: 6px; color: maroon;}
+#txt {color:rgb(85, 17, 17); font-family: 'Times New Roman', Times, serif;}
+#link {color: red; font-weight: bold; background-color: yellow; font-style: italic; text-decoration: none;}
