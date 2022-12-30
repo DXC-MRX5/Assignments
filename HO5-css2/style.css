@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+body {
+    margin: 0%;
+    border: 10px groove yellowgreen;
+    background-image: url("123.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box {
+    border: 5px solid  red;
+    background-color: black;
+    color: white;
+}
+.box1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-sizing: border-box;
+    width: max-content;
+    border-radius: 20px;
+    padding: 2px 20px 25px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+}
+.box2 {
+    width: 400px;
+    height: 45px;
+    border-radius: 15px;
+    position: relative;
+    top: 35px;
+    left: 240px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    padding: 0px 0px 0px 30px;
+}
+.box3 {
+    border-radius: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#b3cn {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin: 0px 30px 5px 30px;
+}
+.parent2{
+    display: flex;
+    margin-top: 150px;
+}
+.circle{
+    display: inline-block;
+    border: 4px solid rgb(83, 83, 83);
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgb(66, 137, 139);
+    position: absolute;
+    top: 400px;
+    left: 80px;
+}
+hr{color: antiquewhite;}
+#fix{
+    text-decoration: underline;
+    position: absolute;
+    top: 40px;
+    left: 12px;
+}
+h5,h6{
+    margin-left: 70px;
+}
+.frm{
+    width: 380px;
+    display: inline-block;
+    border: 6px dashed red;
+    position: relative;
+    left: 700px;
+    text-align: center;
+    background-color: bisque;
+}
+form{
+    padding: 1em;
+}
+#reghd{color: red;}
+label{
+    color: orangered;
+}
+input{
+    text-align: center;
+}
+.menu{
+    width: 300px;
+    box-sizing: content-box;
+    height: 60px;
+    border-radius: 20px;
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    left: 40%;
+    top: 20px;
+}
+.flex-cntnr{
+    position: relative;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content:space-around;
+}
+.menutype{
+    border: 3px solid darkgreen;
+    border-radius: 30px;
+    background-color: aqua;
+    width: 300px;
+    height: 250px;
+    color: blue;
+    text-align: center;
+}
+.bvr{
+    height: 300px;
+}
