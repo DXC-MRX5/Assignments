@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(187, 179, 67);
+    text-align: center;
+}
+.cntnr{
+    margin-left: 500px;
+    margin-top: 50px;
+}
+.box{
+    width: 80px;
+    height: 80px;
+}
+.skew, .skewy, .rotation, .various{
+    display: flex;
+    gap: 50px;
+    align-items: baseline;
+}
+.skew .box{
+    background-color: rgb(19, 82, 82);
+    animation-name: skew;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes skew {
+    0%,100% {
+        transform: skew(25deg);
+    }
+    50% {
+        transform: skew(-25deg);
+    }
+}
+.skewy .box{
+    background-color: rgb(158, 144, 144);
+    animation: skewy 5s ease infinite alternate;
+}
+@keyframes skewy {
+    0%,100% {
+        transform: skewY(20deg);
+    }
+    50% {
+        transform: skewY(-20deg);
+    }
+}
+.rotation .box{
+    background-color: rgb(36, 121, 121);
+    animation: rotation 5s ease infinite;
+}
+@keyframes rotation {
+    25% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.b1{
+    background-color: rgb(36, 121, 121);
+    border: 2px solid rgb(25, 83, 83);
+    animation: sqv 3s ease infinite alternate;
+}
+@keyframes sqv {
+    0% {
+        transform: scale(1,0.5);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+.b2{
+    background-color: rgb(226, 62, 62);
+    border: 2px solid rgb(173, 8, 8);
+    animation: sqh 3s ease infinite alternate;
+}
+@keyframes sqh {
+    0% {
+        transform: scale(0.5,1);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+.b3{
+    background-color: rgb(50, 131, 50);
+    border: 2px solid rgb(7, 77, 7);
+    animation: crotation 5s ease infinite alternate;
+}
+@keyframes crotation {
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(-90deg);
+    }
+}
+a{
+    font-size: 25px;
+}

@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(206, 206, 100);
+    text-align: center;
+}
+.cntnr{
+    margin-left: 550px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(68, 160, 6);
+    margin: 20px;
+}
+.b1{
+    transition: width 2s;
+}
+.b1:hover{
+    width: 250px;
+}
+.b2{
+    transition: width 2s, height 3s;
+}
+.b2:hover{
+    width: 250px;
+    height: 250px;
+}
+.b3{
+    transition: width 2s linear;
+}
+.b3:hover{
+    width: 250px;
+}
+.b4{
+    transition: width 2s ease;
+}
+.b4:hover{
+    width: 250px;
+}
+.b5{
+    transition: width 2s ease-in;
+}
+.b5:hover{
+    width: 250px;
+}
+.b6{
+    transition: width 2s ease-out;
+}
+.b6:hover{
+    width: 250px;
+}
+.b7{
+    transition: width 2s ease-in-out;
+}
+.b7:hover{
+    width: 250px;
+}
+a{
+    font-size: 25px;
+}
