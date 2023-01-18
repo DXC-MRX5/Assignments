@@ -132,8 +132,8 @@
 .flag{
     width: 100px;
     position: absolute;
-    top: 315px;
-    right: 480px;
+    bottom: 230px;
+    left: 770px;
 }
 .flag img{
     width: 100%;
