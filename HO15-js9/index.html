@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Sets</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 5px;
+        }
+        h3{background-color: rgba(166, 199, 99, 0.904); margin-bottom: 0;}
+        h4{color: rgb(0, 89, 255);}
+        h5{color: rgb(56, 122, 56);}
+        p,ol{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0;}
+        pre{background-color: rgb(226, 183, 130); color: rgb(37, 16, 16);}
+    </style>
+</head>
+<body>
+    <h3>Remove Duplicate Occurrences</h3>
+    <p>you are given a string (STR) of length N, consisting of only the lowercase english alphabet. Your task is to remove all the dplicate occurrences of characters in the string.</p>
+    <h4>Solution:</h4>
+    <pre>
+        let input = "abcadeecfb";
+        let output=new Set();
+        let result="";
+        for (let i=0;i< input.length;i++){
+            output.add(input[i]);
+        }
+        for (let ltr of output.keys()){
+            result+=ltr;
+        }
+        console.log(result);
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        Input
+        "abcadeecfb"
+        Output
+        "abcdef"
+    </pre>
+    <hr>
+    <h3>Count of Alphabet (map)</h3>
+    <p>You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)</p>
+    <h4>Solution:</h4>
+    <pre>let myMap = new Map();
+        let s="abcadeecfb";
+        for(let i=0;i< s.length;i++){
+            if(myMap.has(s[i])){
+            let previousCount=myMap.get(s[i]);
+            myMap.set(s[i],previousCount+1);
+            }
+            else{
+            myMap.set(s[i],1);
+            }
+        }
+        for(let [ch,freq] of myMap.entries()){
+            console.log(ch+"="+freq);
+        }
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        Input
+        "abcadeecfb"
+        Output
+        "a=2"
+        "b=2"
+        "c=2"
+        "d=1"
+        "e=2"
+        "f=1"
+    </pre>
+</body>
+</html>
