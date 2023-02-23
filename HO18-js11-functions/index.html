@@ -16,6 +16,10 @@
         p{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0; font-size: 20px;}
         #given{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0; font-size: 20px;}
         pre{background-color: rgb(226, 183, 130); color: rgb(37, 16, 16);}
+        .reason{
+            color: rgb(240, 64, 93);
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -41,7 +45,8 @@
         findSum(5,9);
     </pre>
     <h5>Result :</h5>
-    <pre>Sum of 5,9 is 14</pre>
+    <pre>
+        Sum of 5,9 is 14</pre>
     <hr>
     <p><span>Q3.</span> Create one arrow function.</p>
     <h4>Solution:</h4>
@@ -64,7 +69,10 @@
         girl ();
     </pre>
     <h5>Result :</h5>
-    <pre>undefined</pre>
+    <pre>
+        undefined
+        <span class="reason">Reason : Two different values(21 & 20) are declared to 'x'. So it give output 'undefined'.</span>
+    </pre>
     <hr>
     <pre id="given"><span>Q5.</span>
         Print output: 
@@ -81,6 +89,8 @@
         undefined
         
         21
+        <span class="reason">Reason : In the function call two different values(21 & 20) are declared to 'x'. 
+        But the console call get x's initial value 21(outside the function) and print it.</span>
     </pre>
     <hr>
     <pre id="given"><span>Q6.</span>
@@ -100,8 +110,9 @@
     <h5>Result :</h5>
     <pre>
         20
-
+        
         40
+        <span class="reason">Reason : Inside the function 'a' and 'b' new values of 'x' are assigned.</span>
     </pre>
     <hr>
     <p><span>Q7.</span> Write a function that accepts parameter n and returns factorial of n.</p>
@@ -132,7 +143,9 @@
     </pre>
     <h5>Result :</h5>
     <pre>
-        i am from PrepBytes and My batch is EA20</pre>
+        i am from PrepBytes and My batch is EA20
+        <span class="reason">Reason : In the DisplayData function call FindSum function is used as argument.</span>
+    </pre>
     <hr>
     <pre id="given"><span>Q9.</span>
         Guess the output:
@@ -144,7 +157,10 @@
     </pre>
     <h5>Result :</h5>
     <pre>
-        Uncaught ReferenceError: Cannot access 'Abc' before initialization</pre>
+        Uncaught ReferenceError: Cannot access 'Abc' before initialization
+        <span class="reason">Reason : The 'value' variable is initiated inside the function defination and the function
+            is called before it. As 'let' dosen't support hoisting so its a ReferenceError.</span>
+    </pre>
     <hr>
     <pre id="given"><span>Q10.</span>
         Guess the output:
@@ -156,7 +172,9 @@
     </pre>
     <h5>Result :</h5>
     <pre>
-        undefined</pre>
+        undefined
+        <span class="reason">Reason : Two different values(21 & 20) are declared to 'a'. So it give output 'undefined'.</span>
+    </pre>
     <hr>
     <pre id="given"><span>Q11.</span>
         Guess the Output:
@@ -166,11 +184,14 @@
                 console.log(`Hi!! ${name}, ${m}`);
             }
         }
-        const greet_message = greet('EA19');
+        const greet_message = greet('EA20');
         greet_message("Welcome To PrepBytes");
     </pre>
     <h5>Result :</h5>
     <pre>
-        Hi!! EA19, Welcome To PrepBytes</pre>
+        Hi!! EA20, Welcome To PrepBytes
+        <span class="reason">Reason : Firstly, greet function gets argument 'EA20' and then the return function
+            get argument 'Welcome To PrepBytes' in place of the parameter 'm'.</span>
+    </pre>
 </body>
 </html>
