@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 5px;
+        }
+        span{font-size: 25px;}
+        h4{color: rgb(0, 89, 255);}
+        h5{color: rgb(56, 122, 56);}
+        p{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0; font-size: 20px;}
+        #given{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0; font-size: 20px;}
+        pre{background-color: rgb(226, 183, 130); color: rgb(37, 16, 16);}
+        .reason{
+            color: rgb(240, 64, 93);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <pre id="given"><span>Q1.</span>Print Output :
+
+        function counter(){
+            var counter = 0;
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+            return IncreaseCounter;
+        };
+        var counter = counter();
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+        console.log(counter());
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        1
+        2
+        3
+        4
+        <span class="reason">Reason : The outer function "counter" returns a closure function "IncreaseCounter" and each time it
+            is called, the counter variable is incremented by 1.</span>
+    </pre>
+    <hr>
+    <pre id="given"><span>Q2.</span>Print Output :
+        let count = 0;
+        (function () {
+            if (count === 0) {
+                let count = 1;
+                console.log(count); // What is logged?
+            }
+            console.log(count); // What is logged?
+        })();
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        1
+        0
+        <span class="reason">Reason : First 'console.log' logged the value of 'count' variable that was declared inside the IIFE(Immediately 
+        Invoked Function Expression). As the 'console.log' and the declaration of count variable are inside the
+        same blockscope of "if".
+        Second 'console.log' logged the value of "count" variable that was declared outside the IIFE.</span>
+    </pre>
+    <hr>
+    <pre id="given"><span>Q3.</span>Print Output :
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+                console.log(i); // What is logged?
+            }, 1000);
+        }
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        3
+        3
+        3
+        <span class="reason">Reason : The 'setTimeout' is asynchronous function and it delays the callback function 'log' by 1 second. But
+        by that time 'for' loop iterates synchronously and value of i get to 3.</span>
+    </pre>
+    <hr>
+    <p><span>Q4.</span> Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</p>
+    <h4>Solution:</h4>
+    <pre>
+        function outer(length){
+            function inner(breadth){
+                return length*breadth;
+            }
+        return inner;
+        }
+        let area = outer(6)(3);
+        console.log("area is "+area);
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        area is 18
+    </pre>
+    <hr>
+    <p><span>Q5.</span> Take a variable in outer function and create an inner function to increase the counter every time it is called.</p>
+    <h4>Solution:</h4>
+    <pre>
+        function outer(){
+            let counter = 0; 
+            function inner(){
+                return counter++;
+            };
+            return inner;
+        };
+        let count = outer();
+        console.log(count());
+        console.log(count());
+        console.log(count());
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        0
+        1
+        2
+    </pre>
+    <hr>
+    <pre id="given"><span>Q6.</span>Print Output :
+        var a = 12;
+        (function () {
+            console.log(a);
+        })();
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        12
+        <span class="reason">Reason : The IIFE get the value of variable 'a' as 12 from the global scope and print it.</span>
+    </pre>
+    <hr>
+    <pre id="given"><span>Q7.</span>Print Output :
+        var a = 10;
+        var x = (function () {
+            var a = 12;
+            return function () {
+                console.log(a);
+            };
+        })();
+        x();
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        12
+        <span class="reason">Reason : The 'console.log' print the value of variable 'a' declared inside the IIFE 'x'. As 'console.log'
+        and one declaration of 'a' is inside the function scope so it prints '12'.</span>
+    </pre>
+    <hr>
+    <pre id="given"><span>Q8.</span>Print Output :
+        var globalVar = "xyz";
+        (function outerFunc(outerArg) {
+            var outerVar = 'a';
+            
+            (function innerFunc(innerArg) {
+                var innerVar = 'b';
+                console.log(
+                "outerArg = " + outerArg + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "outerVar = " + outerVar + "\n" +
+                "innerVar = " + innerVar + "\n" +
+                "globalVar = " + globalVar);
+            })(456);
+        })(123);
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        outerArg = 123
+        innerArg = 456
+        outerVar = a
+        innerVar = b
+        globalVar = xyz
+        <span class="reason">Reason : 
+        'outerArg' is the parameter of the IIFE 'outerFunc' and the argument passed to it is '123'.
+        'innerArg' is the parameter of the IIFE 'innerFunc' and the argument passed to it is '456'.
+        'outerVar' is variable 'a' declared inside the IIFE 'outerFunc'.
+        'innerVar' is variable 'b' declared inside the IIFE 'innerFunc'.
+        'globalVar' is variable 'xyz' declared globally outside all function.</span>
+    </pre>
+</body>
+</html>
