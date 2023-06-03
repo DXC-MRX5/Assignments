@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance and Prototype</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 5px;
+        }
+        span{font-size: 25px;}
+        h4{color: rgb(0, 89, 255);}
+        h5{color: rgb(56, 122, 56);}
+        p{background-color: rgba(166, 199, 99, 0.904); margin-top: 0; margin-bottom: 0; font-size: 20px;}
+        #given{background-color: rgb(166, 199, 99); margin-top: 0; margin-bottom: 0; font-size: 20px;}
+        pre{background-color: rgb(226, 183, 130); color: rgb(37, 16, 16);}
+        .reason{
+            color: rgb(240, 64, 93);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p><span>Q1.</span> Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype.</p>
+    <h4>Solution:</h4>
+    <pre>
+        let parent = {
+            name:"object1",
+            greet: function(){
+                console.log("Hi! "+this.name+" Welcome to Prepbytes.");
+            }
+        }
+        let child=Object.create(parent);
+        child.name="object2";
+        child.greet();
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        Hi! object2 Welcome to Prepbytes.
+    </pre>
+    <hr>
+    <p><span>Q2.</span> Write code to explain prototype chaining.</p>
+    <h4>Solution:</h4>
+    <pre>
+        let grandfather={
+            name: "someone-1",
+            intro: function(){
+                console.log("Hi! I am "+this.name);
+            }
+        }
+        let father={
+            name: "someone-2",
+            __proto__:grandfather
+        }
+        let son={
+            name: "someone-3",
+            __proto__:father
+        }
+        son.intro();
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        Hi! I am someone-3
+    <span class="reason"> Prototype chaining is a mechanism in JavaScript that allows objects to inherit properties and methods
+    from other objects. In this example, three objects are define 'grandfather', 'father' and 'son'. Then 'grandfather' is set 
+    as the prototype of 'father' and again 'father' is set as the prototype of 'son'. Now 'son' inherits 'intro' property from 
+    'father' and 'father' get that from 'grandfather'.</span>
+    </pre>
+    <hr>
+    <p><span>Q3.</span> Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays.</p>
+    <h4>Solution:</h4>
+    <pre>
+    Array.prototype.sum = function() {
+        let sum = 0;
+        for (let i = 0; i < this.length; i++) {
+            sum += this[i];
+        }
+        return sum;
+    }
+
+    const array1 = [1, 2, 3, 4];
+    const array2 = [5, 6, 7, 8];
+    const array3 = [9, 10, 11, 12];
+
+    const sum1 = array1.sum();
+    const sum2 = array2.sum();
+    const sum3 = array3.sum();
+
+    console.log(sum1);
+    console.log(sum2);
+    console.log(sum3);
+    </pre>
+    <h5>Result :</h5>
+    <pre>
+        10
+        26
+        42
+    </pre>
+    <hr>
+    <p><span>Q4.</span> Write a JavaScript function to retrieve all the names of object's own and inherited properties.</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDb-Basic</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        *{background-color: #f5eec2; box-sizing: border-box;}
+        h1{color: #416a59; font-family: 'Geologica', sans-serif;}
+        h3{height: 40px; font-size: 18px; padding: 10px; background-color: #39395f; color: white; font-family: 'Raleway', sans-serif;}
+        h4{background-color: #a9c25d; font-family: 'Roboto Mono', monospace;}
+        span{background-color: #73a24e; display: inline-block; width: 60px; height: 25px; color: white;  font-family: 'Raleway', sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>Queries in Database</h1>
+    <h3>1. Create a database , give it name like "Human_Resource". Create a collection inside this named "employee".</h3>
+    <h4><span>Query :</span><br> use Human_Resource <br><br> db.employee.insertMany[given_data]</h4>
+    <h3>2. Query the collection "employee" and list all the documents.</h3>
+    <h4><span>Query :</span><br> db.employee.find()</h4>
+    <h3>3. Query the collection "employee" and list the employees who are having salary more than 30000.</h3>
+    <h4><span>Query :</span><br> db.employee.find({salary:{$gt:"30000"}})</h4>
+    <h3>4. Query the collection "employee" and list the employees who are having experience more than 2 years.</h3>
+    <h4><span>Query :</span><br> db.employee.find({overallExp:{$gt:"2"}})</h4>
+    <h3>5. Query the collection "employee" and list the employees who are graduated after 2015 and having experience more than 1 year.</h3>
+    <h4><span>Query :</span><br> db.employee.find({yearGrad:{$gt:"2015"}, overallExp:{$gt:"1"}})</h4>
+    <h3>6. Query the collection "employee" and update the salary of the employee whose salary is greater than 70000 to 65000.</h3>
+    <h4><span>Query :</span><br> db.employee.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})</h4>
+    <h3>7. Delete all the documents from "employee" where last company is "Y".</h3>
+    <h4><span>Query :</span><br> db.employee.deleteMany({lastCompany:"Y"})</h4>
+</body>
+</html>
